@@ -1,0 +1,15 @@
+[
+  {
+    "id": "invalid-user-id-format",
+    "method": "GET",
+    "path": "/users/not-a-number",
+    "expectedStatus": 400
+  },
+  {
+    "id": "login-wrong-password",
+    "method": "LOGIN",
+    "username": "johnd",
+    "password": "wrong-password",
+    "expectedStatus": 401
+  }
+]

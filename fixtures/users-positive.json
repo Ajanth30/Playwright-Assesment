@@ -1,0 +1,19 @@
+[
+  {
+    "id": "create-valid-user",
+    "payload": {
+      "email": "assessment.user@example.com",
+      "username": "assessment_user",
+      "password": "SecurePass123",
+      "name": { "firstname": "Test", "lastname": "User" },
+      "address": {
+        "city": "Colombo",
+        "street": "Main St",
+        "number": 1,
+        "zipcode": "00100",
+        "geolocation": { "lat": "-6.9", "long": "79.8" }
+      },
+      "phone": "0771234567"
+    }
+  }
+]
