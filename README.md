@@ -1,6 +1,6 @@
 # Playwright Test Automation Assessment
 
-UI, API, and E2E automation for the Verdentra / training assessment using Playwright (TypeScript).
+UI, API, and E2E automation for the training assessment using Playwright (TypeScript).
 
 ## Prerequisites
 
@@ -49,13 +49,3 @@ docs/            Test case documentation
 ## CI/CD
 
 GitHub Actions workflow: `.github/workflows/playwright.yml` (runs on push/PR to main/master).
-
-## Deliverables mapping
-
-| Deliverable | Location |
-|-------------|----------|
-| Test case docs | `docs/TEST_CASES.md` |
-| Playwright scripts (POM) | `tests/`, `pages/` |
-| HTML report | `playwright-report/` (after `npm test`) |
-| Screenshots / video | `test-results/` (on failure) |
-| CI/CD | `.github/workflows/playwright.yml` |
