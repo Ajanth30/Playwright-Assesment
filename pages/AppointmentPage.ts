@@ -51,7 +51,6 @@ export class AppointmentPage {
 
     await this.commentInput.fill(comment);
     await this.bookAppointmentButton.click();
-
     if (expectSuccess) {
       await expect(this.page).toHaveURL(/appointment\.php#summary/, {
         timeout: 20_000,
