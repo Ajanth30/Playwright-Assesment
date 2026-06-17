@@ -24,6 +24,9 @@ jobs:
         CURA_BASE_URL: https://katalon-demo-cura.herokuapp.com
         API_USERNAME: johnd
         API_PASSWORD: m38rmF$
+        # jsonplaceholder is a reliable public stub; used by the e2e apiClient
+        # fixture so the smoke test doesn't depend on fakestoreapi uptime.
+        E2E_API_BASE_URL: https://jsonplaceholder.typicode.com
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
