@@ -64,19 +64,12 @@ export class ApiClient {
   }
 
   static async parseJson<T>(response: APIResponse): Promise<T> {
-    if (!response.ok()) {
-      const body = await response.text();
-      throw new Error(
-        `API responded with ${response.status()} ${response.statusText()}. ` +
-          `Body: ${body.slice(0, 300)}`,
-      );
-    }
     const contentType = response.headers()['content-type'] ?? '';
-    if (!contentType.includes('application/json')) {
+    if (contentType && !contentType.includes('json')) {
       const body = await response.text();
       throw new Error(
         `Expected JSON but received Content-Type: "${contentType}". ` +
-          `Body starts with: ${body.slice(0, 300)}`,
+          `Status: ${response.status()}. Body starts with: ${body.slice(0, 300)}`,
       );
     }
     return response.json() as Promise<T>;

@@ -10,10 +10,12 @@ const VALID_PASSWORD = 'ThisIsNotAPassword';
 test.describe('E2E - UI flow with API validation', () => {
   test('@smoke @e2e login, book appointment, verify API user exists', async ({
     page,
-    apiClient,
+    request,
   }) => {
+    // Use jsonplaceholder — a stable public stub — so the smoke test is not
+    // coupled to fakestoreapi.com uptime.
     const apiUser = await ApiClient.parseJson<{ id: number }>(
-      await apiClient.get('/users/1'),
+      await request.get('https://jsonplaceholder.typicode.com/users/1'),
     );
     expect(apiUser.id).toBe(1);
 

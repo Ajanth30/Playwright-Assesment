@@ -2,13 +2,7 @@ import { test as base, request as playwrightRequest } from '@playwright/test';
 import { ApiClient } from '../../utils/api-client';
 import { loginAndGetToken } from '../../utils/auth';
 
-// E2E_API_BASE_URL lets the e2e project use a stable API (jsonplaceholder)
-// without affecting the dedicated API tests which still point at fakestoreapi
-// via BASE_URL in playwright.config.ts.
-const apiBaseUrl =
-  process.env.E2E_API_BASE_URL ??
-  process.env.BASE_URL ??
-  'https://jsonplaceholder.typicode.com';
+const apiBaseUrl = process.env.BASE_URL ?? 'https://fakestoreapi.com';
 
 type MergedFixtures = {
   apiContext: import('@playwright/test').APIRequestContext;
